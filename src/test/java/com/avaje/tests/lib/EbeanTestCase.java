@@ -30,9 +30,12 @@ public abstract class EbeanTestCase extends TestCase {
 	public EbeanServer getServer() {
 		try {
 			return Ebean.getServer(null);
-		}catch(Throwable e) {
+		}catch(RuntimeException e) {
 			e.printStackTrace();
 			throw e;
+		}catch(Throwable e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 }
