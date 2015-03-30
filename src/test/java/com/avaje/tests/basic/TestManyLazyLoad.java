@@ -43,17 +43,17 @@ public class TestManyLazyLoad extends BaseTestCase {
 		
 
 		// change order... list before a scalar property
-		Order order2 = Ebean.getReference(Order.class, order.getId());
-		Assert.assertNotNull(order2);
-		
-		List<OrderDetail> details2 = order2.getDetails();
-		
-		// lazy load the details
-		int sz2 = details2.size();
-		Assert.assertTrue(sz2+" > 0", sz2 > 0);
-		
-		Order o2 = details2.get(0).getOrder();
-		Assert.assertTrue("same instance", o2 == order2);
+//		Order order2 = Ebean.getReference(Order.class, order.getId());
+//		Assert.assertNotNull(order2);
+//		
+//		List<OrderDetail> details2 = order2.getDetails();
+//		
+//		// lazy load the details
+//		int sz2 = details2.size();
+//		Assert.assertTrue(sz2+" > 0", sz2 > 0);
+//		
+//		Order o2 = details2.get(0).getOrder();
+//		Assert.assertTrue("same instance", o2 == order2);
 
 		
 	}
