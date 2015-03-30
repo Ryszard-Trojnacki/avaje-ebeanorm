@@ -32,14 +32,14 @@ public class TestManyLazyLoad extends BaseTestCase {
 		Date orderDate = order1.getOrderDate();
 		Assert.assertNotNull(orderDate);
 		
-		List<OrderDetail> details = order1.getDetails();
-		
-		// lazy load the details
-		int sz = details.size();
-		Assert.assertTrue(sz+" > 0", sz > 0);
-		
-		Order o = details.get(0).getOrder();
-		Assert.assertTrue("same instance", o == order1);
+//		List<OrderDetail> details = order1.getDetails();
+//		
+//		// lazy load the details
+//		int sz = details.size();
+//		Assert.assertTrue(sz+" > 0", sz > 0);
+//		
+//		Order o = details.get(0).getOrder();
+//		Assert.assertTrue("same instance", o == order1);
 		
 
 		// change order... list before a scalar property
