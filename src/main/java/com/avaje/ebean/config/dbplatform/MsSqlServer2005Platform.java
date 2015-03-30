@@ -24,6 +24,10 @@ public class MsSqlServer2005Platform extends DatabasePlatform {
     this.sqlLimiter = new MsSqlServer2005SqlLimiter();
     this.dbDdlSyntax = new MsDdlSyntax();
     this.dbIdentity.setIdType(IdType.IDENTITY);
+    // According to the ANSI standards SQL:92, SQL:1999, and SQL:2003, 
+    // a UNIQUE constraint should disallow duplicate non-NULL values, 
+    // but allow multiple NULL values.
+    this.dbDdlSyntax.setAddOneToOneUniqueContraint(false);		
     this.dbIdentity.setSupportsGetGeneratedKeys(true);
     this.dbIdentity.setSupportsIdentity(true);
 
