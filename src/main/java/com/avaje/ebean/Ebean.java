@@ -169,6 +169,7 @@ public final class Ebean {
 	        }
           } catch(Throwable e) {
         	  logger.error("Error while creating primary server: "+String.valueOf(primaryName), e);
+        	  throw new RuntimeException(e);
           }
       }
     }
