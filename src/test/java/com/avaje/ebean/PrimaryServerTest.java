@@ -19,9 +19,22 @@ public class PrimaryServerTest {
 
   @Test
   public void testGetPrimaryServerName() throws Exception {
-
+	if(System.getProperty("datasource.default")!=null || System.getProperty("ebean.default.datasource")!=null) return; // if not overriden by run parameters
+	
     String primaryServerName = PrimaryServer.getPrimaryServerName();
     assertEquals("h2", primaryServerName);
+  }
+  
+  @Test
+  public void testGetPrimaryServerNameOverride() throws Exception {
+    String serverName=System.getProperty("datasource.default");
+    if(serverName==null) {
+      serverName=System.getProperty("ebean.default.datasource");
+    }
+    if(serverName==null) return;	// if not overriden then quit this test
+    String primaryServerName = PrimaryServer.getPrimaryServerName();
+    
+    assertEquals(serverName, primaryServerName);
   }
 
   @Test
