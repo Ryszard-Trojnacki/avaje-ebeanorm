@@ -12,6 +12,15 @@ import com.avaje.ebean.Transaction;
  * some cleanup stuff after a test has run
  */
 public abstract class EbeanTestCase extends TestCase {
+	static {
+		Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+			@Override
+			public void uncaughtException(Thread t, Throwable e) {
+				System.err.println("Got uncaught exception in thread: "+t.toString());
+				e.printStackTrace();
+			}
+		});
+	}
 	
 	@Override
 	public void run(TestResult testResult) {
