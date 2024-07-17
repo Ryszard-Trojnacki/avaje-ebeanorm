@@ -2,9 +2,9 @@ package io.ebean.postgis;
 
 import io.ebean.core.type.DataBinder;
 import io.ebeaninternal.server.type.GeoTypeBinder;
+import net.postgis.jdbc.PGgeometryLW;
+import net.postgis.jdbc.geometry.Geometry;
 import org.geolatte.geom.codec.Wkt;
-import org.postgis.Geometry;
-import org.postgis.PGgeometryLW;
 
 import java.sql.SQLException;
 

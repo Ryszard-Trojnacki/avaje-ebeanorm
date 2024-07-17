@@ -11,7 +11,8 @@ module io.ebean.postgis.types {
 
   requires io.ebean.core;
   requires org.postgresql.jdbc;
-  requires postgis.jdbc;
+  requires net.postgis.jdbc;
+  requires net.postgis.jdbc.geometry;
   requires geolatte.geom;
   requires com.fasterxml.jackson.core;
 

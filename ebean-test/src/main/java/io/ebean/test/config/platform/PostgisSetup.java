@@ -17,7 +17,7 @@ class PostgisSetup implements PlatformSetup {
     config.setDefaultPort(defaultPort);
     config.setUsernameDefault();
     config.setPasswordDefault();
-    config.setDriver("org.postgis.DriverWrapperLW");
+    config.setDriver("net.postgis.jdbc.DriverWrapperLW");
     config.setUrl("jdbc:postgresql_lwgis://${host}:${port}/${databaseName}");
 
     String schema = config.getSchema();

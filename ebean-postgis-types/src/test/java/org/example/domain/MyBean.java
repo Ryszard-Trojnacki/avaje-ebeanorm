@@ -1,15 +1,9 @@
 package org.example.domain;
 
-import org.postgis.LineString;
-import org.postgis.MultiLineString;
-import org.postgis.MultiPoint;
-import org.postgis.MultiPolygon;
-import org.postgis.Point;
-import org.postgis.Polygon;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import net.postgis.jdbc.geometry.*;
 
 @Entity
 @Table(name="mybean")

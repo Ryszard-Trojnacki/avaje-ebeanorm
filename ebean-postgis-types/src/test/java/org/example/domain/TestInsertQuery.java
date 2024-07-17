@@ -1,13 +1,8 @@
 package org.example.domain;
 
 import io.ebean.DB;
+import net.postgis.jdbc.geometry.*;
 import org.junit.jupiter.api.Test;
-import org.postgis.LineString;
-import org.postgis.MultiLineString;
-import org.postgis.MultiPoint;
-import org.postgis.MultiPolygon;
-import org.postgis.Point;
-import org.postgis.Polygon;
 
 import java.sql.SQLException;
 import java.util.List;
